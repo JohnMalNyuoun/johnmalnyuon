@@ -18,7 +18,7 @@ export function Footer() {
         <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
           <a
             className="font-label-caps text-[11px] tracking-widest text-secondary hover:text-primary-container transition-colors font-bold uppercase"
-            href={profileLinks.linkedin}
+            href="https://www.linkedin.com/in/john-mal-nyuon-8456aa300"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" role="img" aria-label="Grade Two certificate placeholder">
+  <rect width="1200" height="840" rx="28" fill="#f8f9fa"/>
+  <rect x="36" y="36" width="1128" height="768" rx="20" fill="#ffffff" stroke="#10b981" stroke-width="8"/>
+  <rect x="88" y="88" width="1024" height="664" rx="12" fill="none" stroke="#d6e3da" stroke-width="2"/>
+  <text x="600" y="200" text-anchor="middle" font-size="68" font-family="Inter, Arial, sans-serif" font-weight="700" fill="#006c49">GRADE TWO CERTIFICATE</text>
+  <text x="600" y="290" text-anchor="middle" font-size="34" font-family="Inter, Arial, sans-serif" fill="#3f4f46">Replace this image with your real certificate</text>
+  <line x1="260" y1="430" x2="940" y2="430" stroke="#10b981" stroke-width="3"/>
+  <line x1="260" y1="510" x2="940" y2="510" stroke="#10b981" stroke-width="3"/>
+  <circle cx="980" cy="615" r="78" fill="#10b981" opacity="0.15"/>
+  <path d="M980 560 l28 46 h55 l-44 34 16 54 -55 -34 -55 34 16 -54 -44 -34 h55z" fill="#006c49"/>
+</svg>

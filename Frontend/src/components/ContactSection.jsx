@@ -6,10 +6,9 @@ export function ContactSection() {
   const socialChannels = [
     {
       name: "LINKEDIN",
-   
       url: profileLinks?.linkedin && profileLinks.linkedin.startsWith("http") 
         ? profileLinks.linkedin 
-        : "https://www.linkedin.com/in/john-mal-nyuon",
+        : "https://www.linkedin.com/in/john-mal-nyuon-8456aa300",
       icon: "link",
       isEmail: false,
     },
@@ -23,7 +22,6 @@ export function ContactSection() {
     },
     {
       name: "EMAIL ME",
-      
       url: "mailto:wmal44884@gmail.com",
       icon: "mail",
       isEmail: true,
@@ -32,7 +30,7 @@ export function ContactSection() {
       name: "TWITTER / X",
       url: profileLinks?.twitter && profileLinks.twitter.startsWith("http") 
         ? profileLinks.twitter 
-        : "https://x.com",
+        : "https://x.com/MalNyuon",
       icon: "share",
       isEmail: false,
     },

@@ -24,7 +24,7 @@ export function ExperienceSection() {
     },
   ];
 
-  // Selecting a new skill highlights it; clicking it again deselects it
+   
   const handleSkillClick = (skill) => {
     setActiveSkill((prev) => (prev === skill ? null : skill));
   };

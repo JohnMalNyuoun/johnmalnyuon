@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function ExperienceSection() {
+  // State holds only one active skill name at a time
+  const [activeSkill, setActiveSkill] = useState(null);
+
   const skillCategories = [
     {
       title: "Frontend Architecture",
@@ -21,12 +24,17 @@ export function ExperienceSection() {
     },
   ];
 
+  // Selecting a new skill highlights it; clicking it again deselects it
+  const handleSkillClick = (skill) => {
+    setActiveSkill((prev) => (prev === skill ? null : skill));
+  };
+
   return (
     <section
       className="py-16 md:py-24 px-margin-mobile md:px-gutter max-w-container-max mx-auto space-y-16"
       id="experience"
     >
-      {/* 1. Skills Section (Without Card Wrapper) */}
+      {/* 1. Skills Section */}
       <div className="w-full max-w-4xl mx-auto">
         <h3 className="text-emerald-600 text-[11px] tracking-[0.22em] uppercase font-bold mb-8 text-center">
           Technical & Strategic Expertise
@@ -43,21 +51,30 @@ export function ExperienceSection() {
               </span>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-2.5 flex-1">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-1.5 bg-surface-variant/40 text-on-surface-variant text-sm font-medium rounded-full border border-outline-variant/30"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                {category.skills.map((skill) => {
+                  const isActive = activeSkill === skill;
+                  return (
+                    <button
+                      key={skill}
+                      type="button"
+                      onClick={() => handleSkillClick(skill)}
+                      className={`px-4 py-1.5 text-sm font-medium rounded-full border transition-all duration-300 cursor-pointer select-none ${
+                        isActive
+                          ? "bg-blue-600 text-white border-blue-600 shadow-md -translate-y-2 animate-bounce"
+                          : "bg-surface-variant/40 text-on-surface-variant border-outline-variant/30 hover:border-blue-500/50 hover:bg-surface-variant/80 hover:-translate-y-0.5"
+                      }`}
+                    >
+                      {skill}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 2. Philosophy & Belief Section (Downward) */}
+      {/* 2. Philosophy & Belief Section */}
       <div className="max-w-3xl mx-auto text-center">
         <p className="text-emerald-600 text-[11px] tracking-[0.22em] uppercase font-bold mb-4">
           My Philosophy

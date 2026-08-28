@@ -2,26 +2,39 @@ import React from "react";
 import { profileLinks } from "../assets/portfolioAssets";
 
 export function ContactSection() {
+  // Hardcoded direct URLs to guarantee valid navigation
   const socialChannels = [
     {
       name: "LINKEDIN",
-      url: profileLinks.linkedin,
+   
+      url: profileLinks?.linkedin && profileLinks.linkedin.startsWith("http") 
+        ? profileLinks.linkedin 
+        : "https://www.linkedin.com/in/john-mal-nyuon",
       icon: "link",
+      isEmail: false,
     },
     {
       name: "GITHUB",
-      url: profileLinks.github || "https://github.com/JohnMalNyuoun",
+      url: profileLinks?.github && profileLinks.github.startsWith("http") 
+        ? profileLinks.github 
+        : "https://github.com/JohnMalNyuoun",
       icon: "terminal",
+      isEmail: false,
     },
     {
       name: "EMAIL ME",
-      url: profileLinks.email || "wmal44884@gmail.com",
+      
+      url: "mailto:wmal44884@gmail.com",
       icon: "mail",
+      isEmail: true,
     },
     {
       name: "TWITTER / X",
-      url: profileLinks.twitter || "https://twitter.com",
+      url: profileLinks?.twitter && profileLinks.twitter.startsWith("http") 
+        ? profileLinks.twitter 
+        : "https://x.com",
       icon: "share",
+      isEmail: false,
     },
   ];
 
@@ -48,7 +61,7 @@ export function ContactSection() {
             <a
               key={channel.name}
               href={channel.url}
-              target="_blank"
+              target={channel.isEmail ? "_self" : "_blank"}
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 py-5 px-6 bg-surface-variant/30 hover:bg-blue-600 hover:text-white text-secondary font-label-caps text-[12px] font-bold tracking-widest uppercase rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md"
             >

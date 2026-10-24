@@ -22,32 +22,31 @@ export function ProjectsSection({ projects, loading, error }) {
           </div>
         )}
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
-            <article key={project.id} className="glass-panel overflow-hidden rounded-[28px]">
+        <div className="mt-12">
+          {projects.map((project, index) => (
+            <article
+              key={project.id}
+              className="grid gap-6 border-t border-slate-700/80 py-8 last:border-b md:grid-cols-2 md:items-center md:gap-12 md:py-10"
+            >
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-56 w-full object-cover object-center"
+                loading="lazy"
+                className={`aspect-[16/10] w-full object-center ${
+                  project.imageFit === "contain" ? "bg-white object-contain p-5" : "object-cover"
+                } ${index % 2 === 1 ? "md:order-2" : ""}`}
               />
-              <div className="p-6 md:p-7">
-                <div className="flex flex-wrap gap-2">
-                  {(project.tags || []).map((tag) => (
-                    <span
-                      key={`${project.id}-${tag}`}
-                      className="rounded-full border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-slate-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="mt-5 text-2xl font-semibold text-white">{project.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">{project.summary}</p>
+              <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                  {(project.tags || []).join(" · ")}
+                </p>
+                <h3 className="mt-4 text-2xl font-semibold text-white md:text-3xl">{project.title}</h3>
+                <p className="mt-3 max-w-xl text-sm leading-7 text-slate-300">{project.summary}</p>
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300 hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950"
+                  className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300 hover:text-white"
                 >
                   {project.cta || "View project"}
                   <span aria-hidden="true">→</span>

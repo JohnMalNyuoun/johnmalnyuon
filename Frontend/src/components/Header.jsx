@@ -23,9 +23,7 @@ export function Header({ activeTab, setActiveTab }) {
           onClick={() => handleNavClick("hero")}
           className="flex items-center gap-3 text-left"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-cyan-400/40 bg-cyan-400/10 text-sm font-bold text-cyan-300">
-            JM
-          </span>
+          
           <span className="text-lg font-semibold tracking-tight text-white">
             John Mal Nyuoun
           </span>

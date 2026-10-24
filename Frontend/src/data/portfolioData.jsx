@@ -29,7 +29,8 @@ export const fallbackProjects = [
     tags: ["EDUCATION", "LEARNING PLATFORM"],
     cta: "Visit Site",
     href: "https://skillbridge-tu5k.onrender.com/",
-    image: fallbackProjectImages.generic,
+    image: fallbackProjectImages.skillBridge,
+    imageFit: "contain",
   },
   {
     id: "fallback-hurugarden",
@@ -39,7 +40,8 @@ export const fallbackProjects = [
     tags: ["COMMUNITY", "WEB EXPERIENCE"],
     cta: "Visit Site",
     href: "https://hurugarden.onrender.com",
-    image: fallbackProjectImages.generic,
+    image: fallbackProjectImages.huruGarden,
+    imageFit: "contain",
   },
 ];
 

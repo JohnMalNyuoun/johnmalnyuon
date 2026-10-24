@@ -1,107 +1,121 @@
-import React from "react";
 import { personalAssets } from "../assets/portfolioAssets";
 import { scrollToSection } from "../utils/scroll";
 
 export function HeroSection({ setActiveTab }) {
+  const services = [
+    {
+      title: "SEO & Google visibility",
+      description:
+        "Improve how search engines discover and understand a website through keyword research, page titles, metadata, content, technical SEO, indexing, and Search Console insights.",
+      skills: ["Keyword research", "On-page SEO", "Technical SEO", "Google Search Console"],
+    },
+    {
+      title: "Analytics & conversion tracking",
+      description:
+        "Measure where visitors come from, how they use a site, and which eligible actions they take with clear, privacy-conscious analytics and conversion events.",
+      skills: ["Google Analytics 4", "Google Tag Manager", "Meta Pixel", "Google Ads conversions"],
+    },
+    {
+      title: "Digital marketing measurement",
+      description:
+        "Use channel and campaign data to understand what brings visitors, identify where people disengage, and find practical opportunities to improve enquiries and sales.",
+      skills: ["Campaign measurement", "Audience insights", "Performance reviews", "Data-informed decisions"],
+    },
+  ];
+
   return (
-    <section className="relative min-h-[78vh] md:min-h-[85vh] bg-slate-900 text-white overflow-hidden" id="hero">
-      {/* 1. Deep Water Base Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 via-slate-900 to-blue-900/70 pointer-events-none z-0"></div>
+    <>
+      <section
+        className="relative flex min-h-[calc(100svh-5rem)] items-end overflow-hidden bg-slate-950 text-white"
+        id="hero"
+      >
+        <img
+          src={personalAssets.heroPortrait}
+          alt="John Mal Nyuoun"
+          className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
+        />
+        <div className="absolute inset-0 bg-slate-950/45" aria-hidden="true" />
 
-      {/* 2. Full-Hero Animated Water Wave Layers */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-40">
-        <div className="absolute -top-32 -left-[50%] w-[220%] h-[220%] animate-[waterFlow_18s_ease-in-out_infinite_alternate] rounded-[40%] bg-gradient-to-tr from-blue-600/30 to-cyan-500/20 blur-xl"></div>
-        <div className="absolute -top-40 -left-[40%] w-[200%] h-[240%] animate-[waterFlow_12s_linear_infinite_reverse] rounded-[43%] bg-gradient-to-br from-cyan-400/20 to-blue-500/30 blur-2xl"></div>
-      </div>
-
-      {/* 3. Floating Water Particle/Bubble Effects */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <span className="absolute bottom-10 left-[10%] w-3 h-3 rounded-full bg-cyan-300/30 animate-[bubble_8s_ease-in_infinite]"></span>
-        <span className="absolute bottom-16 left-[50%] w-4 h-4 rounded-full bg-blue-300/20 animate-[bubble_11s_ease-in_infinite_2s]"></span>
-        <span className="absolute bottom-6 left-[80%] w-2 h-2 rounded-full bg-cyan-200/40 animate-[bubble_9s_ease-in_infinite_4s]"></span>
-      </div>
-
-      {/* 4. Hero Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12 pt-32 md:pt-40 pb-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-        <div className="w-full flex flex-col text-left">
-          <p className="mb-4 text-cyan-400 font-label-caps text-[11px] tracking-[0.25em] uppercase font-bold">
-            MERN STACK WEB SPECIALIST
-          </p>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white max-w-xl leading-[1.15]">
-            Hi, I&apos;m a Full-Stack Developer &amp; Project Coordinator.
-          </h1>
-          <p className="mt-6 max-w-lg leading-relaxed text-lg text-cyan-100/90">
-            Engineering digital ecosystems that drive{" "}
-            <span className="text-cyan-400 font-semibold">
-              social impact.
-            </span>
-          </p>
-
-          <div className="flex flex-row gap-6 mt-8 items-center flex-wrap">
-            <button
-              type="button"
-              onClick={() => scrollToSection("projects", setActiveTab)}
-              className="py-2 text-sm font-bold text-cyan-400 border-b-2 border-cyan-400 hover:text-cyan-300 hover:border-cyan-300 transition-all duration-300 cursor-pointer active:scale-95 animate-[waterDrop_1s_ease-in-out_infinite]"
-            >
-              View Projects
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollToSection("contact", setActiveTab)}
-              className="py-2 text-sm font-semibold text-cyan-100/80 border-b-2 border-transparent hover:text-cyan-300 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer active:scale-95"
-            >
-              Get in Touch
-            </button>
-          </div>
-        </div>
-
-        {/* 5. Portrait Container with Fluid Motion Effect */}
-        <div className="flex justify-center md:justify-end">
-          <div className="relative w-full max-w-[400px] p-1.5 rounded-[38px] bg-gradient-to-tr from-cyan-400/60 via-blue-500/30 to-cyan-300/60 shadow-2xl shadow-cyan-900/30 backdrop-blur-md animate-[pulse_4s_ease-in-out_infinite]">
-            <div className="w-full bg-slate-900/80 rounded-[34px] p-2.5 backdrop-blur-md">
-              <img
-                src={personalAssets.heroPortrait}
-                alt="Developer portrait"
-                className="w-full aspect-[4/5] object-cover rounded-[26px]"
-              />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-12 pt-20 md:px-12 md:pb-16">
+          <div className="max-w-3xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              Web Developer | SEO &amp; Digital Growth Specialist
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
+              I build websites that get found.
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-200 md:text-lg">
+              I&apos;m John Mal Nyuoun. I create modern, responsive websites and help businesses
+              improve search visibility, understand visitor behaviour, and make more informed
+              marketing decisions.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => scrollToSection("projects", setActiveTab)}
+                className="rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-slate-950 hover:bg-cyan-300"
+              >
+                View projects
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection("contact", setActiveTab)}
+                className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white hover:border-cyan-300 hover:text-cyan-300"
+              >
+                Contact me
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Fluid Keyframe Animations */}
-      <style>{`
-        @keyframes waterFlow {
-          0% {
-            transform: rotate(0deg) scale(1);
-          }
-          50% {
-            transform: rotate(180deg) scale(1.1);
-          }
-          100% {
-            transform: rotate(360deg) scale(1);
-          }
-        }
+      <section className="bg-slate-900 py-20 text-white md:py-28" aria-labelledby="services-heading">
+        <div className="mx-auto max-w-6xl px-6 md:px-12">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="section-label mb-5">Web development &amp; digital growth</p>
+            <h2 className="section-heading" id="services-heading">
+              More than a website: a measurable digital presence.
+            </h2>
+            <p className="section-subheading mt-6">
+              I combine web development, strategic SEO, analytics, and conversion measurement to
+              help businesses reach relevant audiences and learn what happens next.
+            </p>
+          </div>
 
-        @keyframes bubble {
-          0% {
-            transform: translateY(0) scale(1);
-            opacity: 0;
-          }
-          50% {
-            opacity: 0.6;
-          }
-          100% {
-            transform: translateY(-120px) scale(1.5);
-            opacity: 0;
-          }
-        }
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {services.map((service) => (
+              <article
+                key={service.title}
+                className="rounded-3xl border border-slate-700 bg-slate-950 p-7"
+              >
+                <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{service.description}</p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {service.skills.map((skill) => (
+                    <li
+                      key={skill}
+                      className="rounded-full border border-slate-700 bg-slate-900 px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-cyan-300"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
 
-        @keyframes waterDrop {
-          0%, 100% { transform: translateY(-6px); }
-          50% { transform: translateY(-2px); }
-        }
-      `}</style>
-    </section>
+          <div className="mx-auto mt-10 max-w-4xl border-l-2 border-cyan-400 px-5 py-1 text-sm leading-7 text-slate-300">
+            Tracking tools measure activity and eligible conversion events; they do not identify
+            every visitor. Pixel-based advertising and analytics should be configured with
+            appropriate consent, privacy safeguards, and platform policies in mind.
+          </div>
+
+          <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-medium leading-8 text-slate-100">
+            My goal is to turn a business website from a static online presence into a digital
+            asset that supports visibility, customer engagement, and ongoing improvement.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

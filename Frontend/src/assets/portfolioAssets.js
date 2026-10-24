@@ -6,8 +6,10 @@ import milesImage from "./MILES.jpeg";
 export const profileLinks = {
   fursahub: "https://fursahub.onrender.com/",
   miles: "https://milesproject.onrender.com/",
-  linkedin: "#",
-  github: "#"
+  linkedin: "https://www.linkedin.com/in/john-mal-nyuon-8456aa300",
+  github: "https://github.com/JohnMalNyuoun",
+  facebook: "https://www.facebook.com/johnmalnyuon/",
+  twitter: "https://x.com/MalNyuon",
 };
 
 export const fallbackProjectImages = {

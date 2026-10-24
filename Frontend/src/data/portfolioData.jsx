@@ -21,6 +21,26 @@ export const fallbackProjects = [
     href: profileLinks.miles,
     image: fallbackProjectImages.miles,
   },
+  {
+    id: "fallback-skillbridge",
+    title: "SkillBridge",
+    summary:
+      "A digital learning and skills-matching platform that connects learners with practical training pathways and job-ready opportunities.",
+    tags: ["EDUCATION", "LEARNING PLATFORM"],
+    cta: "Visit Site",
+    href: "https://skillbridge-tu5k.onrender.com/",
+    image: fallbackProjectImages.generic,
+  },
+  {
+    id: "fallback-hurugarden",
+    title: "Huru Garden",
+    summary:
+      "A community-centered digital experience focused on garden engagement, sustainable practices, and an informative online presence.",
+    tags: ["COMMUNITY", "WEB EXPERIENCE"],
+    cta: "Visit Site",
+    href: "https://hurugarden.onrender.com",
+    image: fallbackProjectImages.generic,
+  },
 ];
 
 export const mapApiProjectToCard = (project) => ({

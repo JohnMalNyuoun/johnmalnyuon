@@ -28,9 +28,9 @@ export default function App() {
   };
 
   return (
-    <div className="portrait-theme-bg min-h-screen flex flex-col justify-between text-on-surface font-body-md selection:bg-primary-container selection:text-white">
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500 selection:text-slate-950">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main className="pt-20 flex-grow">
+      <main className="flex-grow pt-20">
         {renderActiveSection()}
       </main>
       <Footer />

@@ -24,23 +24,6 @@ export function Projectcard({ title, summary, tags, cta, href, image }) {
       className="relative group w-full max-w-6xl mx-auto py-16 px-6 md:px-12 bg-slate-900 text-white overflow-hidden"
       id={`project-${title.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      {/* 1. Deep Water Base Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 via-slate-900 to-blue-900/60 pointer-events-none z-0"></div>
-
-      {/* 2. Full-Section Animated Water Wave Layers */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-40">
-        <div className="absolute -top-32 -left-[50%] w-[220%] h-[220%] animate-[waterFlow_18s_ease-in-out_infinite_alternate] rounded-[40%] bg-gradient-to-tr from-blue-600/30 to-cyan-500/20 blur-xl"></div>
-        <div className="absolute -top-40 -left-[40%] w-[200%] h-[240%] animate-[waterFlow_12s_linear_infinite_reverse] rounded-[43%] bg-gradient-to-br from-cyan-400/20 to-blue-500/30 blur-2xl"></div>
-      </div>
-
-      {/* 3. Floating Water Particle/Bubble Effects */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <span className="absolute bottom-10 left-[8%] w-3 h-3 rounded-full bg-cyan-300/30 animate-[bubble_9s_ease-in_infinite]"></span>
-        <span className="absolute bottom-14 left-[45%] w-4 h-4 rounded-full bg-blue-300/20 animate-[bubble_12s_ease-in_infinite_2s]"></span>
-        <span className="absolute bottom-8 left-[88%] w-2.5 h-2.5 rounded-full bg-cyan-200/40 animate-[bubble_7s_ease-in_infinite_3.5s]"></span>
-      </div>
-
-      {/* 4. Card Content Container (Grid Layout) */}
       <div className="relative z-10 grid md:grid-cols-[1fr,auto] gap-12 items-center">
         
         {/* Project Details */}
@@ -105,9 +88,9 @@ export function Projectcard({ title, summary, tags, cta, href, image }) {
           </a>
         </div>
 
-        {/* Floating Project Image with Fluid Border */}
-        <div className="relative w-full max-w-[420px] justify-self-center md:justify-self-end p-2 rounded-[38px] bg-gradient-to-tr from-cyan-400/50 via-blue-500/20 to-cyan-300/50 shadow-2xl shadow-cyan-950/40 backdrop-blur-md animate-[pulse_4s_ease-in-out_infinite]">
-          <div className="w-full bg-slate-900/80 rounded-[34px] p-2.5 overflow-hidden backdrop-blur-md">
+        {/* Project Image */}
+        <div className="relative w-full max-w-[420px] justify-self-center md:justify-self-end p-2 rounded-[38px] bg-slate-800 shadow-lg shadow-slate-950/25">
+          <div className="w-full bg-slate-900 rounded-[34px] p-2.5 overflow-hidden">
             <img
               alt={title}
               className="w-full aspect-[4/5] object-cover rounded-[26px] transition-transform duration-700 group-hover:scale-105"
@@ -116,36 +99,6 @@ export function Projectcard({ title, summary, tags, cta, href, image }) {
           </div>
         </div>
       </div>
-
-      {/* Fluid Keyframes & Water Splash Animations */}
-      <style>{`
-        @keyframes waterFlow {
-          0% { transform: rotate(0deg) scale(1); }
-          50% { transform: rotate(180deg) scale(1.1); }
-          100% { transform: rotate(360deg) scale(1); }
-        }
-
-        @keyframes bubble {
-          0% { transform: translateY(0) scale(1); opacity: 0; }
-          50% { opacity: 0.6; }
-          100% { transform: translateY(-120px) scale(1.5); opacity: 0; }
-        }
-
-        @keyframes splashRipple {
-          0% { width: 0px; height: 0px; opacity: 0.9; }
-          100% { width: 160px; height: 160px; opacity: 0; }
-        }
-
-        @keyframes splashDrop1 {
-          0% { transform: translate(0, 0) scale(1); opacity: 1; }
-          100% { transform: translate(-22px, -26px) scale(0); opacity: 0; }
-        }
-
-        @keyframes splashDrop2 {
-          0% { transform: translate(0, 0) scale(1); opacity: 1; }
-          100% { transform: translate(22px, -24px) scale(0); opacity: 0; }
-        }
-      `}</style>
     </div>
   );
 }
